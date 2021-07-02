@@ -1,3 +1,19 @@
+# Yu-Gi-Fly Bot Telegram Bot
+# Copyright (C) 2021 Alexelgt
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 import re
 
 cards_info = {
@@ -41,10 +57,6 @@ cards_info = {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqqZgq2sYgYv0Zi_QZUYtw8bHCRDa0QACpQoAApRMMFHFaikae6k60h8E",
         "regex": re.compile(r'inocencia|tengo( un)? (iphone|ios)|tengo( un)? (iphone|ios)(,)? ah[ií] no se puede instalar( el)? fl[iy]|no puede ser(,)? si uso iphone|yo es que uso iphone y no puedo tener fl[iy]|uso iphone y ah[ií] no se puede usar', re.IGNORECASE)
     },
-    "SOBRINO_MAGICO": {
-        "sticker_id": "CAACAgQAAx0CR9kKNwACqzpgq5IL1xtBlWvROW6LMOWru79oqAACgQoAAik1OVGa_HLAufiS7R8E",
-        "regex": re.compile(r'sobrino m[aá]gico|le dej[eé] el (m[oó]vil|tel[eé]fono) a mi', re.IGNORECASE)
-    },
     "REGIONALES": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqztgq5K37P7mQUbKWKCTGAYRMdO4kAAC3AsAAj7jOFG-5Ol3itNH6x8E",
         "regex": re.compile(r'regionales|solo capturo( los)? regionales|solo( lo)? (uso|utilizo)( el fl[iy])? para capturar( los)? regionales', re.IGNORECASE)
@@ -59,7 +71,7 @@ cards_info = {
     },
     "DESCONOCIMIENTO": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqz5gq5RTELlrlNRKpH9e-D0TKMVI4AACdQoAAl_yMVFpsdemqKHdJR8E",
-        "regex": re.compile(r'desconocimiento|no sab[ií] que no se pod[ií]a usar', re.IGNORECASE)
+        "regex": re.compile(r'desconocimiento|no sab[ií] que no se (pod[ií]a|pudie(ra|se)) usar', re.IGNORECASE)
     },
     "COCHE_INVISIBLE": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2Bgq6hTOxNlJKZjHfyYRqLS0wVeIwACXwoAAl5_MFEUhEqE8qMCyB8E",
@@ -116,6 +128,54 @@ cards_info = {
     "FRANKIE_EL_SOPLON": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACrCFgrhtvaS7tjn8KkKMGsMHKnLVUnQAClwoAAruAaVFf_WFhx6c_lx8E",
         "regex": re.compile(r'frankie el sopl[oó]n|te digo qui[eé]n( m[aá]s)? es fl[iy]', re.IGNORECASE)
+    },
+    "ENVIDIA_GALOPANTE": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuWZg3ytSwaP14kqW03t0A5VsXg54KwAC-woAAmJtkFHnGxMVp7RkdSAE",
+        "regex": re.compile(r'envidia galopante|ten[eé]is pesar por el bien ajeno', re.IGNORECASE)
+    },
+    "SOBRINO_MAGICO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuWdg3yuzobMvcS4Z4ezjWHic4ftPxwACcQgAArIzkVER7qY32UmVKiAE",
+        "regex": re.compile(r'sobrino m[aá]gico|le dej[eé] el (m[oó]vil|tel[eé]fono) a mi', re.IGNORECASE)
+    },
+    "MULTIPLE_PERSONALIDAD": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuWpg3yxLs50esY6JXoqFGvJs-ou1ZAAC4goAAk35kVGUnmH50-EtjSAE",
+        "regex": re.compile(r'm[uú]tiple personalidad|se han metido varias personas en mi m[oó]vil', re.IGNORECASE)
+    },
+    "REGALO_ENVENENADO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuWtg3yzgFy0yzP7pn_jMwQ2Xls6YOgAC0wkAAkZgmFEpJZUPcznP6iAE",
+        "regex": re.compile(r'regalo envenenado|me han regalado una cuenta que est([aá]|aba) baneada', re.IGNORECASE)
+    },
+    "ESPRINT_PERPETUO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuWxg3y0rGkPgJBsitYA3s4nIhwo2IgAC5wgAAoZgoVEybFVX3oJZzSAE",
+        "regex": re.compile(r'esprint perpetuo|me han baneado( solo) por tener demasiados (km|kil[oó]metros)', re.IGNORECASE)
+    },
+    "OLD_SCHOOL": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuW1g3y2UxemhKYuqE79WS2-V_dBhcwACiAwAAo3CmFGEi74VMTubVCAE",
+        "regex": re.compile(r'old school|mi cuenta es de 2016', re.IGNORECASE)
+    },
+    "HACKER_MALICIOSO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuW5g3y3DOFb_hQcRmAFmk58s1SChuQACcgoAAiSnsVHqzq78jyNXUSAE",
+        "regex": re.compile(r'hacker malicioso|se metieron en mi cuenta', re.IGNORECASE)
+    },
+    "NAVE_FALSA": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuW9g3y3vT0Fib8MYm50QBoa1mMs-NwACsAkAAnqQuFGqlZu8CkxFIiAE",
+        "regex": re.compile(r'nave falsa|alguien ha colocado ese icono en mi juego', re.IGNORECASE)
+    },
+    "PA_HACERME_EL_CHULO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuXBg3y4zE8FFkZB3a76izmQzpLaJMAACghcAAtFwuVE3GdIwsaeJxSAE",
+        "regex": re.compile(r'hacerme el chulo|lo instal[eé] para presumir', re.IGNORECASE)
+    },
+    "ERA_BROMI": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuXFg3y6V8VOKUeEa5wuJZ8lDgTVPMgACgAoAAnS76VJNDQrbZQSmViAE",
+        "regex": re.compile(r'era bromi|la confesión( p[uú]blica) que hice fue ir[oó]nica', re.IGNORECASE)
+    },
+    "YA_TENGO_UNA_EDAD": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuXJg3y7eomAbA4FE7GOL1jfkGlzhUAACIAsAAua36VJApSJwwSP6iiAE",
+        "regex": re.compile(r'ya tengo una edad|tengo muchos años como para ponerme a hacer trampas', re.IGNORECASE)
+    },
+    "PAULO_COELHO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACuXNg3y8VQfcBxrRUjVQL1PjRaRZKygACAQwAAonH6FKfU3zCSPqPxiAE",
+        "regex": re.compile(r'paulo coelho|lo importante es estar feliz con lo que hagas', re.IGNORECASE)
     },
 }
 
