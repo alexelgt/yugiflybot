@@ -91,7 +91,7 @@ cards_info = {
     },
     "LIBERTAD": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2pgq6-Ws0EtdvUdM5AWVcvJZYNrSwACywgAAn8tOFGXj4TkLpw76B8E",
-        "regex": re.compile(r'libertad|cada uno juega como quiere', re.IGNORECASE)
+        "regex": re.compile(r'libertad|cada uno juega como quiere|a ratos fl[iy] a ratos normal', re.IGNORECASE)
     },
     "AMISTAD": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2tgq6_KB866mwABls7hc1OyBrvAGJYAAosJAAJ61TlR3Hiv5JX7BRcfBA",
@@ -119,7 +119,7 @@ cards_info = {
     },
     "A_QUIEN_MADRUGA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACrB9grhpar42xUmBMkgLlFIKAz700hAACIwsAAgQkaVG0ITuDWIY_-R8E",
-        "regex": re.compile(r'a quien madruga|dios le ayuda|me levanto muy (temprano|pronto)|no tengo tiempo', re.IGNORECASE)
+        "regex": re.compile(r'a quien madruga|dios le ayuda|me levanto muy (temprano|pronto)|no tengo tiempo|mi jornada empieza pronto', re.IGNORECASE)
     },
     "GAME_BOOSTER": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACrCBgrhqyDHUCOYEXo7bHy5SgBhqYVgACRQkAArAVaFFD9ISXq8c5YB8E",
