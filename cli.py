@@ -39,7 +39,7 @@ dispatcher = updater.dispatcher
 
 #==== Message handlers ====#
 # Message sent
-dispatcher.add_handler(MessageHandler(callback=handleusermessage.check_text, filters=Filters.text & Filters.regex(CHECK_TEXT_REGEX) & Filters.update.message & (Filters.chat_type.groups | Filters.chat_type.private), run_async=True))
+dispatcher.add_handler(MessageHandler(callback=handleusermessage.check_text, filters=Filters.text & Filters.regex(CHECK_TEXT_REGEX) & Filters.update.message & Filters.chat_type.groups, run_async=True))
 
 # dispatcher.add_handler(MessageHandler(callback=handleusermessage.update_info, filters=(Filters.sticker | Filters.animation), run_async=True))
 #== Message handlers ==#
