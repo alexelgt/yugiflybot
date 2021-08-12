@@ -42,9 +42,9 @@ def check_text(update: Update, context: CallbackContext):
         for card in cards_info:
 
             if bool(cards_info[card]["regex"].search(text)):
-                if combo_points <= 15:
+                if combo_points < 10:
                     support.send_sticker_message(update, context, cards_info[card]["sticker_id"], replyToMessage=True)
-                    sleep(1)
+                    sleep(1.25)
 
                 combo_points += 1
 
