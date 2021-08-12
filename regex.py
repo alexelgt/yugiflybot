@@ -177,6 +177,54 @@ cards_info = {
         "sticker_id": "CAACAgQAAx0CR9kKNwACuXNg3y8VQfcBxrRUjVQL1PjRaRZKygACAQwAAonH6FKfU3zCSPqPxiAE",
         "regex": re.compile(r'paulo coelho|lo importante es estar feliz con lo que hagas', re.IGNORECASE)
     },
+    "DERROCHADOR": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvp5hFP6Kx1rM06GSVAfyQpuhfD-K4AAC9AsAAoNuoVDINRFVEtkAAUggBA",
+        "regex": re.compile(r'derrochador|dinero', re.IGNORECASE)
+    },
+    "UNILINGUE": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvp9hFP7ZI75hdTTYb5EWp4nC96TeJQACLwoAAmHZqVCiQjof7ZoaiiAE",
+        "regex": re.compile(r'uniling[uü]e|pgsharp|españ(a|ol)', re.IGNORECASE)
+    },
+    "NOS_TIENEN_MANIA": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvqFhFP_von2CY1Cl5x6Jsx5iLQRDrwAC-wkAAkFIqFCQklDzk7rRciAE",
+        "regex": re.compile(r'man[ií]a|temas personales|baneado del bo(o)?t', re.IGNORECASE)
+    },
+    "COMPARTIR_ES_VIVIR": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvqJhFQABDCyIkrC0biGbwsxYH4WE77QAAsAIAAK15KlQKYsKJWEqNW8gBA",
+        "regex": re.compile(r'compartir|compartir es vivir', re.IGNORECASE)
+    },
+    "VICTIMA_DEL_SISTEMA": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvqRhFQFaP-MMGzcH_s6vo18exoHUxAACRQsAAnvYqVAjUIxcIR5pxiAE",
+        "regex": re.compile(r'v[ií]ctima del sistema|grupo baneado|bane[oó] a( mi|l) grupo', re.IGNORECASE)
+    },
+    "INFILTRADO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvqdhFQHUvIkMeXe0g4a3E9dqRVMX2QACcwsAAh9eoVBfwb4UKsQKpCAE",
+        "regex": re.compile(r'infiltrado|reportar a otros', re.IGNORECASE)
+    },
+    "MONTAÑA_VA_A_MAHOMA": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvqhhFQILG72ZrVg3ihR46Y9RucUF1AAC3AwAAqgOqFBIFFsesauuQSAE",
+        "regex": re.compile(r'montaña va a mahoma|incienso', re.IGNORECASE)
+    },
+    "EL_PODER_DE_LA_AMISTAD": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvqphFQKCQ_7RyXq1ECEh_WUy54kT9wACugsAAmeyqFD89DdKevBqvCAE",
+        "regex": re.compile(r'amistad|amigo', re.IGNORECASE)
+    },
+    "MIGUEL_BOTSE": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvqthFQL8XBMYqJbWM4e-QXwvWK28SAAC7AkAAtJWqVCVYoAyZbJGMSAE",
+        "regex": re.compile(r'bo(o)?ts[eé]|contagi(arno|o)', re.IGNORECASE)
+    },
+    "CONTROL_PARENTAL": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvqxhFQOPLvQgPjzVeO562bxHaLCt8wACeAsAAv-ZqVBEctTil5lbOyAE",
+        "regex": re.compile(r'control parental|monitorizado', re.IGNORECASE)
+    },
+    "SIEMPRE_HUBO_CLASES": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvq1hFQPQ0HzG4V0SI-t7wzqbJSHEhwAC_QkAAoM2qVAFHJU2tD3xAiAE",
+        "regex": re.compile(r'siempre hubo clases|no se le(s) banea', re.IGNORECASE)
+    },
+    "HEROE_SIN_KAPPA": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACvq5hFQQCtTioo2aB1k__UZBNisez2QACZAoAAsudqVCDd9DtBhB61SAE",
+        "regex": re.compile(r'h[eé]roe|(tumbar|tirar) (gym|gimnasio)', re.IGNORECASE)
+    },
 }
 
 all_regex_text = ""
