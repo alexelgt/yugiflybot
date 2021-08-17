@@ -43,7 +43,7 @@ cards_info = {
     },
     "LA_PRINCIPAL": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqxZgq40hfk7HobhGfCtcRO5mNkeiwgACBgsAAm-aMFFhn4vTLjvNQR8E",
-        "regex": re.compile(r'la principal|con la( cuenta)? principal juego legalmente|((hago|uso)( el)? fl[iy]|l[ao] uso) con la( cuenta)? (secundaria|pequeña)', re.IGNORECASE)
+        "regex": re.compile(r'\bprincipal\b|con la( cuenta)? principal juego legalmente|((hago|uso)( el)? fl[iy]|l[ao] uso) con la( cuenta)? (secundaria|pequeña)', re.IGNORECASE)
     },
     "LESION": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqxdgq42psr5CYASCNlHfYzuI7ZjVhAACVgkAApnvMFH8Py4Z-5-V8B8E",
@@ -99,7 +99,7 @@ cards_info = {
     },
     "EL_QUE_TENGO_AQUI_COLGADO": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2xgq6_2lqvzYxMDbgG5fZuz37z6fQACwAsAAm_yOVG7YHMWSYAlqB8E",
-        "regex": re.compile(r'el que tengo aqu[ií] colgado|voy a poner este tema en manos de mi abogado', re.IGNORECASE)
+        "regex": re.compile(r'el que tengo aqu[ií] colgado|abogado', re.IGNORECASE)
     },
     "KINDER_SORPRESA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq21gq7ArDoBYZKcEvo5GVGTEvItzCQACkAoAArBvWFHx-MMChLesjh8E",
@@ -147,7 +147,7 @@ cards_info = {
     },
     "ESPRINT_PERPETUO": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACuWxg3y0rGkPgJBsitYA3s4nIhwo2IgAC5wgAAoZgoVEybFVX3oJZzSAE",
-        "regex": re.compile(r'esprint perpetuo|me han baneado( solo) por tener demasiados (km|kil[oó]metros)', re.IGNORECASE)
+        "regex": re.compile(r'sprint perpetuo|me han baneado( solo) por tener demasiados (km|kil[oó]metros)', re.IGNORECASE)
     },
     "OLD_SCHOOL": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACuW1g3y2UxemhKYuqE79WS2-V_dBhcwACiAwAAo3CmFGEi74VMTubVCAE",
@@ -187,7 +187,7 @@ cards_info = {
     },
     "NOS_TIENEN_MANIA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACvqFhFP_von2CY1Cl5x6Jsx5iLQRDrwAC-wkAAkFIqFCQklDzk7rRciAE",
-        "regex": re.compile(r'man[ií]a|temas personales|baneado del bo(o)?t', re.IGNORECASE)
+        "regex": re.compile(r'\bman[ií]a\b|temas personales|baneado del bo(o)?t', re.IGNORECASE)
     },
     "COMPARTIR_ES_VIVIR": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACvqJhFQABDCyIkrC0biGbwsxYH4WE77QAAsAIAAK15KlQKYsKJWEqNW8gBA",
