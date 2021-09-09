@@ -225,6 +225,10 @@ cards_info = {
         "sticker_id": "CAACAgQAAx0CR9kKNwACvq5hFQQCtTioo2aB1k__UZBNisez2QACZAoAAsudqVCDd9DtBhB61SAE",
         "regex": re.compile(r'h[eé]roe|(tumbar|tirar) (gym|gimnasio)', re.IGNORECASE)
     },
+    "ENTRE_LA_ESPADA_Y_LA_PARED": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwACxz1hOep4MU8AAQ1WeUibWy-NEmI8DIcAAi4MAAJaaclR3S9eNv_YIm8gBA",
+        "regex": re.compile(r'espada|pared|sobreviv|supervivencia|vida', re.IGNORECASE)
+    },
 }
 
 all_regex_text = ""
