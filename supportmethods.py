@@ -115,6 +115,35 @@ def delayed_delete_message(time: int, chat_id: int, message_id: int, context):
     except:
         pass
 
+def send_text_message(update, context, output_text, output_buttons, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
+    try:
+        chat_id, chat_type, user_id, username, first_name, text, message = extract_update_info(update)
+
+        if output_text != None:
+            if replyToMessage:
+                reply_to_message_id = message.message_id
+            else:
+                reply_to_message_id = None
+
+            message_sent = context.bot.sendMessage(
+                chat_id=chat_id,
+                text=output_text,
+                reply_markup=output_buttons,
+                reply_to_message_id=reply_to_message_id,
+                allow_sending_without_reply=True,
+                parse_mode=telegram.ParseMode.HTML,
+                disable_web_page_preview=True)
+
+            if deleteMessage:
+                delete_message(chat_id, message.message_id, context)
+
+            if delete_reply_after is not None:
+                delayed_delete_message(delete_reply_after, chat_id, message_sent.message_id, context)
+            return message_sent
+        return None
+    except:
+        pass
+
 def send_sticker_message(update, context, sticker_id, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
     try:
         chat_id, chat_type, user_id, username, first_name, text, message = extract_update_info(update)

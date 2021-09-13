@@ -16,6 +16,8 @@
 
 import re
 
+FLY_GROUPS_REGEX = re.compile(r'pokemongoflymundial100ivs|intercambiospokemongoflymundial|pokemongoflymundial|ayudaflypokemongo|coordenadasunown|laketriopogo|offtopicflymundial|pvpflymundial|codigosamistadflymundial|pokemongofly100|pokemongoflychat|pokemongoflycoords|pokemongoflyraids|pgsharpop|pgsharpk|pgsharpapp|pgsharpofficials|pogoflyitaly2_0|pokemongohackspain|flygpspokemongo|unlimited100pokemon|pogopvpcoordinates|catch100|aerialsurveymisiones|aerialsurveypgo|pokemodespressoapk|top_pvpcoords|nexushub00|toppokego100iv|teamgorocketcoords', re.IGNORECASE)
+
 cards_info = {
     "NEGACION_PERPETUA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqrlgq3DaAgbAMdlx-jBjFfBYuvJpWgACjwkAAoIUOFHGDP1O2sYXTR8E",
@@ -227,7 +229,7 @@ cards_info = {
     },
     "ENTRE_LA_ESPADA_Y_LA_PARED": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACxz1hOep4MU8AAQ1WeUibWy-NEmI8DIcAAi4MAAJaaclR3S9eNv_YIm8gBA",
-        "regex": re.compile(r'espada|pared|sobreviv|supervivencia|vida', re.IGNORECASE)
+        "regex": re.compile(r'\bespada(s)?\b|\bpared(es)?\b|sobreviv|supervivencia|\bvida\b', re.IGNORECASE)
     },
 }
 

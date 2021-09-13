@@ -21,7 +21,7 @@ from time import sleep
 
 import yugiflybot.supportmethods as support
 
-from yugiflybot.regex import cards_info
+from yugiflybot.regex import FLY_GROUPS_REGEX, cards_info
 
 combo_ids = {
     "2-3": "CgACAgQAAx0CR9kKNwACqthgq3YLNSvV7OJUd8lr12juMfimaQACMwIAAr4GpFKVUzYwrKpIhh8E",
@@ -39,6 +39,10 @@ def check_text(update: Update, context: CallbackContext):
     combo_points = 0
 
     try:
+        fly_groups_points = len(FLY_GROUPS_REGEX.findall(text))
+
+        combo_points += fly_groups_points
+
         for card in cards_info:
 
             if bool(cards_info[card]["regex"].search(text)):
@@ -47,6 +51,11 @@ def check_text(update: Update, context: CallbackContext):
                     sleep(1.25)
 
                 combo_points += 1
+
+        if fly_groups_points > 0:
+            output_text = "Detectados {} grupos fly".format(fly_groups_points)
+            support.send_text_message(update, context, output_text, None, replyToMessage=True)
+            sleep(1.25)
 
         if combo_points in range(2,4):
             output_text = "💥 <b>¡Combo x{}!</b>\n\nNo está mal, fly, pero puedes hacerlo mejor.".format(combo_points)

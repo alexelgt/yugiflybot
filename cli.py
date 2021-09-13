@@ -22,7 +22,7 @@ from telegram.bot import Bot
 
 import yugiflybot.handleusermessage as handleusermessage
 
-from yugiflybot.regex import CHECK_TEXT_REGEX
+from yugiflybot.regex import FLY_GROUPS_REGEX, CHECK_TEXT_REGEX
 
 from yugiflybot.config import bot_token
 
@@ -39,7 +39,7 @@ dispatcher = updater.dispatcher
 
 #==== Message handlers ====#
 # Message sent
-dispatcher.add_handler(MessageHandler(callback=handleusermessage.check_text, filters=Filters.text & Filters.regex(CHECK_TEXT_REGEX) & Filters.update.message & Filters.chat_type.groups, run_async=True))
+dispatcher.add_handler(MessageHandler(callback=handleusermessage.check_text, filters=Filters.text & (Filters.regex(CHECK_TEXT_REGEX) | Filters.regex(FLY_GROUPS_REGEX)) & Filters.update.message & Filters.chat_type.groups, run_async=True))
 
 # dispatcher.add_handler(MessageHandler(callback=handleusermessage.update_info, filters=(Filters.sticker | Filters.animation), run_async=True))
 #== Message handlers ==#
