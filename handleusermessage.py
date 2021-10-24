@@ -21,7 +21,7 @@ from time import sleep
 
 import yugiflybot.supportmethods as support
 
-from yugiflybot.regex import FLY_GROUPS_REGEX, cards_info
+from yugiflybot.regex import FLY_GROUPS_REGEX, cards_info, animations_info
 
 combo_ids = {
     "2-3": "CgACAgQAAx0CR9kKNwACqthgq3YLNSvV7OJUd8lr12juMfimaQACMwIAAr4GpFKVUzYwrKpIhh8E",
@@ -69,4 +69,18 @@ def check_text(update: Update, context: CallbackContext):
 
     except:
         pass
+
+    check_animation(update, context)
 #== Search if a text is in any of the Regular Expressions ==#
+
+def check_animation(update: Update, context: CallbackContext):
+    chat_id, chat_type, user_id, username, first_name, text, message = support.extract_update_info(update)
+
+    try:
+        for animation in animations_info:
+            if bool(animations_info[animation]["regex"].search(text)):
+                support.send_animation_message(update, context, animations_info[animation]["animation_id"], None, None, replyToMessage=True)
+                sleep(1.25)
+
+    except:
+        pass

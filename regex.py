@@ -93,7 +93,7 @@ cards_info = {
     },
     "LIBERTAD": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2pgq6-Ws0EtdvUdM5AWVcvJZYNrSwACywgAAn8tOFGXj4TkLpw76B8E",
-        "regex": re.compile(r'libertad|cada uno juega como quiere|a ratos fl[iy] a ratos normal', re.IGNORECASE)
+        "regex": re.compile(r'libertad|cada uno (juega|que juegue) como quier[ae]|a ratos fl[iy] a ratos normal', re.IGNORECASE)
     },
     "AMISTAD": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2tgq6_KB866mwABls7hc1OyBrvAGJYAAosJAAJ61TlR3Hiv5JX7BRcfBA",
@@ -241,3 +241,19 @@ for card in cards_info:
 all_regex_text = all_regex_text.rstrip("|")
 
 CHECK_TEXT_REGEX = re.compile(all_regex_text, re.IGNORECASE)
+
+animations_info = {
+    "NAZI_WALKER": {
+        "animation_id": "CgACAgQAAx0CR9kKNwACypxhdbvZGu9VoMqm5UPXdn8o5GqyXAACSgEAArnhmVOk22WpWiz84yEE",
+        "regex": re.compile(r'\bnazi(walker)?(s)?\b', re.IGNORECASE)
+    },
+}
+
+all_regex_text = ""
+
+for animation in animations_info:
+    all_regex_text += "{}|".format(animations_info[animation]["regex"].pattern)
+
+all_regex_text = all_regex_text.rstrip("|")
+
+ANIMATION_TEXT_REGEX = re.compile(all_regex_text, re.IGNORECASE)
