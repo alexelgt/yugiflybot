@@ -245,7 +245,7 @@ CHECK_TEXT_REGEX = re.compile(all_regex_text, re.IGNORECASE)
 animations_info = {
     "NAZI_WALKER": {
         "animation_id": "CgACAgQAAx0CR9kKNwACypxhdbvZGu9VoMqm5UPXdn8o5GqyXAACSgEAArnhmVOk22WpWiz84yEE",
-        "regex": re.compile(r'\bnazi(walker)?(s)?\b', re.IGNORECASE)
+        "regex": re.compile(r'\bnazi(walker)?(s)?\b|grupo de reportes', re.IGNORECASE)
     },
 }
 
