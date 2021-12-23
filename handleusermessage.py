@@ -32,9 +32,9 @@ combo_ids = {
 def update_info(update: Update, context: CallbackContext):
     print(update)
 
-#==== Search if a text is in any of the Regular Expressions ====#
-def check_text(update: Update, context: CallbackContext):
-    chat_id, chat_type, user_id, username, first_name, text, message = support.extract_update_info(update)
+#==== Cards ====#
+def check_cards_text(update: Update, context: CallbackContext):
+    chat_id, text, message = support.extract_update_info(update)
 
     combo_points = 0
 
@@ -70,11 +70,12 @@ def check_text(update: Update, context: CallbackContext):
     except:
         pass
 
-    check_animation(update, context)
-#== Search if a text is in any of the Regular Expressions ==#
+    check_animations_text(update, context)
+#== Cards ==#
 
-def check_animation(update: Update, context: CallbackContext):
-    chat_id, chat_type, user_id, username, first_name, text, message = support.extract_update_info(update)
+#==== Animations ====#
+def check_animations_text(update: Update, context: CallbackContext):
+    chat_id, text, message = support.extract_update_info(update)
 
     try:
         for animation in animations_info:
@@ -84,3 +85,4 @@ def check_animation(update: Update, context: CallbackContext):
 
     except:
         pass
+#== Animations ==#

@@ -16,31 +16,7 @@
 
 import telegram
 
-def extract_user_info(user):
-    try:
-        user_id = user.id
-    except:
-        user_id = None
-
-    try:
-        username = user.username
-    except:
-        username = None
-
-    try:
-        first_name = user.first_name
-    except:
-        first_name = None
-
-    try:
-        last_name = user.last_name
-    except:
-        last_name = None
-
-    return user_id, username, first_name, last_name
-
 def extract_update_info(update):
-    isCallback = False
     try:
         message = update.message
     except:
@@ -63,7 +39,6 @@ def extract_update_info(update):
     if message is None:
         try:
             message = update.callback_query.message
-            isCallback = True
         except:
             message = None
 
@@ -77,23 +52,12 @@ def extract_update_info(update):
         except:
             text = None
 
-    if isCallback:
-        from_user = update.callback_query.from_user
-    else:
-        from_user = message.from_user
-
-    user_id, username, first_name = extract_user_info(from_user)[:3]
-
     try:
         chat_id = message.chat.id
     except:
         chat_id = None
-    try:
-        chat_type = message.chat.type
-    except:
-        chat_type = None
 
-    return chat_id, chat_type, user_id, username, first_name, text, message
+    return chat_id, text, message
 
 def delete_message(chat_id, message_id, context):
     try:
@@ -117,7 +81,7 @@ def delayed_delete_message(time: int, chat_id: int, message_id: int, context):
 
 def send_text_message(update, context, output_text, output_buttons, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
     try:
-        chat_id, chat_type, user_id, username, first_name, text, message = extract_update_info(update)
+        chat_id, text, message = extract_update_info(update)
 
         if output_text != None:
             if replyToMessage:
@@ -146,7 +110,7 @@ def send_text_message(update, context, output_text, output_buttons, deleteMessag
 
 def send_sticker_message(update, context, sticker_id, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
     try:
-        chat_id, chat_type, user_id, username, first_name, text, message = extract_update_info(update)
+        chat_id, text, message = extract_update_info(update)
 
         if sticker_id != None:
             if replyToMessage:
@@ -172,7 +136,7 @@ def send_sticker_message(update, context, sticker_id, deleteMessage=False, reply
 
 def send_animation_message(update, context, animation_id, output_text, output_buttons, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
     try:
-        chat_id, chat_type, user_id, username, first_name, text, message = extract_update_info(update)
+        chat_id, text, message = extract_update_info(update)
 
         if animation_id != None:
             if replyToMessage:
