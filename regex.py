@@ -33,7 +33,7 @@ cards_info = {
     },
     "CONTRAATAQUE": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqwdgq4lUw1Pgc4i4Gs9qAxKyu4vbiQACWQsAAvOxOFHGxm0Px8dcdh8E",
-        "regex": re.compile(r'contraataque|pika(chu)? fomenta el( uso de(l)?)? fl[iy]', re.IGNORECASE)
+        "regex": re.compile(r'contraataque|pika(chu)? fomenta el( uso del?)? fl[iy]', re.IGNORECASE)
     },
     "CALCULADOR": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqwlgq4uExqCsXtuO0pMrMxLNvj0m5QAClQoAAptFOFGEWrGFpFfsPh8E",
@@ -57,7 +57,7 @@ cards_info = {
     },
     "INOCENCIA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqqZgq2sYgYv0Zi_QZUYtw8bHCRDa0QACpQoAApRMMFHFaikae6k60h8E",
-        "regex": re.compile(r'inocencia|tengo( un)? (iphone|ios)|tengo( un)? (iphone|ios)(,)? ah[ií] no se puede instalar( el)? fl[iy]|no puede ser(,)? si uso iphone|yo es que uso iphone y no puedo tener fl[iy]|uso iphone y ah[ií] no se puede usar', re.IGNORECASE)
+        "regex": re.compile(r'inocencia|tengo( un)? (iphone|ios)|tengo( un)? (iphone|ios),? ah[ií] no se puede instalar( el)? fl[iy]|no puede ser,? si uso iphone|yo es que uso iphone y no puedo tener fl[iy]|uso iphone y ah[ií] no se puede usar', re.IGNORECASE)
     },
     "REGIONALES": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqztgq5K37P7mQUbKWKCTGAYRMdO4kAAC3AsAAj7jOFG-5Ol3itNH6x8E",
@@ -77,11 +77,11 @@ cards_info = {
     },
     "COCHE_INVISIBLE": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2Bgq6hTOxNlJKZjHfyYRqLS0wVeIwACXwoAAl5_MFEUhEqE8qMCyB8E",
-        "regex": re.compile(r'coche invisible|iba en coche(,)? por eso no me viste', re.IGNORECASE)
+        "regex": re.compile(r'coche invisible|iba en coche,? por eso no me viste', re.IGNORECASE)
     },
     "COVID-19": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2Fgq6kGXk2dUY_qb_2lxb_hLum5KAAC3A0AAuG6MVG2SPk1Z1qvnR8E",
-        "regex": re.compile(r'covid(-)?(19)?|cumplir con las restricciones|con covid(-)?(19)? (us[eé]|utilic[eé])( el)? fl[iy]|no (puedo|pod[ií]a) salir de casa', re.IGNORECASE)
+        "regex": re.compile(r'covid-?(19)?|cumplir con las restricciones|con covid-?(19)? (us[eé]|utilic[eé])( el)? fl[iy]|no (puedo|pod[ií]a) salir de casa', re.IGNORECASE)
     },
     "HIPOCRESIA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2Jgq6mgi3tf1xf8OmdVb2tPhBX5nwACSQoAAg2QOFFvHUHdWF5ILx8E",
@@ -97,7 +97,7 @@ cards_info = {
     },
     "AMISTAD": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2tgq6_KB866mwABls7hc1OyBrvAGJYAAosJAAJ61TlR3Hiv5JX7BRcfBA",
-        "regex": re.compile(r'amistad|era la cuenta de un(a)? amig|un(a)? amig[ao] me dej[oó] (su (m[oó]vil|tel[eé]fono)|el suyo)', re.IGNORECASE)
+        "regex": re.compile(r'amistad|era la cuenta de una? amig|una? amig[ao] me dej[oó] (su (m[oó]vil|tel[eé]fono)|el suyo)', re.IGNORECASE)
     },
     "EL_QUE_TENGO_AQUI_COLGADO": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq2xgq6_2lqvzYxMDbgG5fZuz37z6fQACwAsAAm_yOVG7YHMWSYAlqB8E",
@@ -113,7 +113,7 @@ cards_info = {
     },
     "INOCENTE_ILUSTRADO": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq29gq7Ch-rEX5ZgKcNNgrwLXQP8HuAAC2AcAAg3WWVGasMkJtwjG-h8E",
-        "regex": re.compile(r'inocente ilustrado|estoy en( un)? grupo(s)? fl[iy](,)?(( solo para) informarme de las (novedades|noticias)| pero (no uso fl[iy]|solo para (que me hagan|hacer) intercambios))', re.IGNORECASE)
+        "regex": re.compile(r'inocente ilustrado|estoy en( un)? grupos? fl[iy],?(( solo para) informarme de las (novedades|noticias)| pero (no uso fl[iy]|solo para (que me hagan|hacer) intercambios))', re.IGNORECASE)
     },
     "MUERTE_DEL_MENSAJERO": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACq3Bgq7Dn81jcEL4UOMMuPE2DOyCyuQACgQoAAj0GWFH1Jpv9EGzoaB8E",
@@ -169,7 +169,7 @@ cards_info = {
     },
     "ERA_BROMI": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACuXFg3y6V8VOKUeEa5wuJZ8lDgTVPMgACgAoAAnS76VJNDQrbZQSmViAE",
-        "regex": re.compile(r'era bromi|la confesión( p[uú]blica) que hice fue ir[oó]nica', re.IGNORECASE)
+        "regex": re.compile(r'era brom[ai]|la confesión( p[uú]blica) que hice fue ir[oó]nica', re.IGNORECASE)
     },
     "YA_TENGO_UNA_EDAD": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACuXJg3y7eomAbA4FE7GOL1jfkGlzhUAACIAsAAua36VJApSJwwSP6iiAE",
@@ -189,7 +189,7 @@ cards_info = {
     },
     "NOS_TIENEN_MANIA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACvqFhFP_von2CY1Cl5x6Jsx5iLQRDrwAC-wkAAkFIqFCQklDzk7rRciAE",
-        "regex": re.compile(r'\bman[ií]a\b|temas personales|baneado del bo(o)?t', re.IGNORECASE)
+        "regex": re.compile(r'\bman[ií]a\b|temas personales|baneado del boo?t', re.IGNORECASE)
     },
     "COMPARTIR_ES_VIVIR": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACvqJhFQABDCyIkrC0biGbwsxYH4WE77QAAsAIAAK15KlQKYsKJWEqNW8gBA",
@@ -213,7 +213,7 @@ cards_info = {
     },
     "MIGUEL_BOTSE": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACvqthFQL8XBMYqJbWM4e-QXwvWK28SAAC7AkAAtJWqVCVYoAyZbJGMSAE",
-        "regex": re.compile(r'bo(o)?ts[eé]|contagi(arno|o)', re.IGNORECASE)
+        "regex": re.compile(r'boo?ts[eé]|contagi(arno|o)', re.IGNORECASE)
     },
     "CONTROL_PARENTAL": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACvqxhFQOPLvQgPjzVeO562bxHaLCt8wACeAsAAv-ZqVBEctTil5lbOyAE",
@@ -221,7 +221,7 @@ cards_info = {
     },
     "SIEMPRE_HUBO_CLASES": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACvq1hFQPQ0HzG4V0SI-t7wzqbJSHEhwAC_QkAAoM2qVAFHJU2tD3xAiAE",
-        "regex": re.compile(r'siempre hubo clases|no se le(s) banea', re.IGNORECASE)
+        "regex": re.compile(r'siempre hubo clases|no se les? banea', re.IGNORECASE)
     },
     "HEROE_SIN_KAPPA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACvq5hFQQCtTioo2aB1k__UZBNisez2QACZAoAAsudqVCDd9DtBhB61SAE",
@@ -229,7 +229,47 @@ cards_info = {
     },
     "ENTRE_LA_ESPADA_Y_LA_PARED": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACxz1hOep4MU8AAQ1WeUibWy-NEmI8DIcAAi4MAAJaaclR3S9eNv_YIm8gBA",
-        "regex": re.compile(r'\bespada(s)?\b|\bpared(es)?\b|sobreviv|supervivencia|\bvida\b', re.IGNORECASE)
+        "regex": re.compile(r'\bespadas?\b|\bpared(es)?\b|sobreviv|supervivencia|\bvida\b', re.IGNORECASE)
+    },
+    "DISCIPULO_ENTREGADO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0IRhxFXRkFCX_tc_1BZQ4oqMt6CtugACaQsAAg7u-FAbDvLMy5HZLSME",
+        "regex": re.compile(r'disc[ií]pul|estudi', re.IGNORECASE)
+    },
+    "SMI": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0IVhxFcUOYbuMsnqbMbxq-AwAgxFawACUgoAAgvLAVEAAW2wC3JF6rcjBA",
+        "regex": re.compile(r'smi|sueldo|\bpases?\b', re.IGNORECASE)
+    },
+    "SECRETO_A_VOCES": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0IZhxFglW6W4XXdoHFBakqvr9rJXCwACJgsAAoGFAAFRSScAARQzV6j0IwQ",
+        "regex": re.compile(r'secreto|entre t[uú] y yo|entre nosotros', re.IGNORECASE)
+    },
+    "REY_SIN_CORONA": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0IdhxFhesr8jFehts01_UjjFbLY71wACcwkAAtFW-VB-_HWxnU5EmSME",
+        "regex": re.compile(r'rey|reina|admin|no (estar|tener) ban', re.IGNORECASE)
+    },
+    "CHIVO_EXPIATORIO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0IhhxFi5v8ywENVf2EOQF8ByO7KBAQAC8AwAAhIoAVFUhAABjFboJ0ojBA",
+        "regex": re.compile(r'chivo expiatorio|(m[oó]vil|tel[eé]fono|dispositivo) (viejo|antiguo)', re.IGNORECASE)
+    },
+    "WORKAHOLIC": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0IlhxFko7bGiRW0LOT4vnknfQaFATwACQAoAAhhdAVGjkCEPZTyUjiME",
+        "regex": re.compile(r'workaholic|trabaj(o|ar?)', re.IGNORECASE)
+    },
+    "TARIFA_INSUFICIENTE": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0IphxFmA2CaMltd_3sdd40au3Lm9TwAC6wsAAmEb-VBS0RQLWgmELSME",
+        "regex": re.compile(r'tarifa|datos', re.IGNORECASE)
+    },
+    "PLAN_B": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0IthxFmw0l2CnoReVqRvPp7vzywnBwACYg0AAl5L-FAkCzmZJdoJHiME",
+        "regex": re.compile(r'plan b|pobre|datos', re.IGNORECASE)
+    },
+    "JUMPER": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0IxhxFnb5PwX8k6S5F5BlruFoaXrKAACYAoAAiglAAFRulGd0u9GN7cjBA",
+        "regex": re.compile(r'jumper|saltar|salto|coger|volver', re.IGNORECASE)
+    },
+    "TU_FLY_DE_CONFIANZA": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC0I1hxFoVI0fCcoYukVLY9NNgK7sqmQACrwwAAvgkaVHWjPH7-9dveSME",
+        "regex": re.compile(r'confi(anza|ar|o)', re.IGNORECASE)
     },
 }
 
