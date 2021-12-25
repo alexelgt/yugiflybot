@@ -286,6 +286,10 @@ animations_info = {
         "animation_id": "CgACAgQAAx0CR9kKNwACypxhdbvZGu9VoMqm5UPXdn8o5GqyXAACSgEAArnhmVOk22WpWiz84yEE",
         "regex": re.compile(r'\bnazi(walker)?(s)?\b|grupo de reportes', re.IGNORECASE)
     },
+    "POCO_ME_PARECE": {
+        "animation_id": "CgACAgQAAx0CR9kKNwAC0MVhx4TjMJi4AAEOSf5rbOKbpIArmdIAAgkLAAJZ3jhSIhuVn6minn4jBA",
+        "regex": re.compile(r'poco me parece|\d+', re.IGNORECASE)
+    },
 }
 
 all_animations_regex_text = "|".join([animations_info[animation]["regex"].pattern for animation in animations_info])
