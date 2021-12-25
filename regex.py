@@ -247,7 +247,7 @@ cards_info = {
     },
     "REY_SIN_CORONA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwAC0IdhxFhesr8jFehts01_UjjFbLY71wACcwkAAtFW-VB-_HWxnU5EmSME",
-        "regex": re.compile(r'rey|reina|admin|no (estar|tener) ban', re.IGNORECASE)
+        "regex": re.compile(r'\brey\b|\breina\b|\badmin|no (estar|tener) ban', re.IGNORECASE)
     },
     "CHIVO_EXPIATORIO": {
         "sticker_id": "CAACAgQAAx0CR9kKNwAC0IhhxFi5v8ywENVf2EOQF8ByO7KBAQAC8AwAAhIoAVFUhAABjFboJ0ojBA",
@@ -288,7 +288,7 @@ animations_info = {
     },
     "POCO_ME_PARECE": {
         "animation_id": "CgACAgQAAx0CR9kKNwAC0MVhx4TjMJi4AAEOSf5rbOKbpIArmdIAAgkLAAJZ3jhSIhuVn6minn4jBA",
-        "regex": re.compile(r'poco me parece|\d+', re.IGNORECASE)
+        "regex": re.compile(r'poco me parece|\b(?<!\+)\d+\b', re.IGNORECASE)
     },
 }
 
