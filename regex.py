@@ -288,7 +288,7 @@ animations_info = {
     },
     "POCO_ME_PARECE": {
         "animation_id": "CgACAgQAAx0CR9kKNwAC0MVhx4TjMJi4AAEOSf5rbOKbpIArmdIAAgkLAAJZ3jhSIhuVn6minn4jBA",
-        "regex": re.compile(r'poco me parece|\b(?<!\+)\d+\b', re.IGNORECASE)
+        "regex": re.compile(r'poco me parece|\b(?<!\+)\d{3,}\b', re.IGNORECASE)
     },
 }
 
