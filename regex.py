@@ -288,7 +288,11 @@ animations_info = {
     },
     "POCO_ME_PARECE": {
         "animation_id": "CgACAgQAAx0CR9kKNwAC0MVhx4TjMJi4AAEOSf5rbOKbpIArmdIAAgkLAAJZ3jhSIhuVn6minn4jBA",
-        "regex": re.compile(r'poco me parece|\b(?<!\+)\d{3,}\b', re.IGNORECASE)
+        "regex": re.compile(r'poco me parece|\b(?<![\+\-\/=])\d{3,}\b|\b\d+(k|M)\b|\d+ ?(€|\$|£|pavos)', re.IGNORECASE)
+    },
+    "ESPAÑITA": {
+        "animation_id": "CgACAgQAAx0CR9kKNwAC0e5h0FoQbXduHm63E4lUntmQ2uSkJwACMgIAAjvs3FIty-uxlI8iLyME",
+        "regex": re.compile(r'españita', re.IGNORECASE)
     },
 }
 
