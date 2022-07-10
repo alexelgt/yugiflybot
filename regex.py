@@ -273,6 +273,42 @@ cards_info = {
         "sticker_id": "CAACAgQAAx0CR9kKNwAC0I1hxFoVI0fCcoYukVLY9NNgK7sqmQACrwwAAvgkaVHWjPH7-9dveSME",
         "regex": re.compile(r'confi(anza|ar|o)', re.IGNORECASE)
     },
+    "PACIENTE_CERO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC4KViyw11ep4SsPsq2UplxEGiua2XFQACsAwAAnNtGFJT3vHD0Bs4likE",
+        "regex": re.compile(r'paciente (cero|0)|pesad[ao]|imposible jugar', re.IGNORECASE)
+    },
+    "ESTABILIZADOR_GPS": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC4Khiyw4Xc5iVpseVn_fsF3NZtPnJvgACHRAAAjnRGFIdoipts00xJikE",
+        "regex": re.compile(r'gps|se le pira', re.IGNORECASE)
+    },
+    "EPILEPSIA": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC4Kliyw5uwM4MRSHjYJSTv0tJUiZh_QACqwwAAvBkGFKPn-3Z5ezMFikE",
+        "regex": re.compile(r'epilepsia|epil[eé]ptico', re.IGNORECASE)
+    },
+    "CON_LA_IGLESIA_HEMOS_TOPADO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC4Kpiyw6j5gjq4TNntaLk75Q7yPjATQACjA0AAjlGIFLFiB_RWflKyCkE",
+        "regex": re.compile(r'iglesia|desconocid[ao]', re.IGNORECASE)
+    },
+    "PIEDAD": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC4Ktiyw8EFvmL-T-2HZy3ykseDJVZ2AACWQoAAsf4GFKJDvvwXI_ZIikE",
+        "regex": re.compile(r'piedad', re.IGNORECASE)
+    },
+    "AMENAZA_CONFUSA": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC4Kxiyw8vohsRkWvv46gq-xm1N8rvqwACjQ0AAuySGFI-6VTDuXR7QSkE",
+        "regex": re.compile(r'amenaza|instalar', re.IGNORECASE)
+    },
+    "ESPIRITU_NAVIDEÑO": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC4K5iyw_VPc2tR006uUZBRBoAAUkrvrwAAtEPAAKjvRlS91mBptbxU5spBA",
+        "regex": re.compile(r'esp[ií]ritu navideño', re.IGNORECASE)
+    },
+    "ESTATUTOS": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC4K9iyxAFQM0He2wJqj1SYc4FJ_RpEAAC8woAAjLAIFLHCfKjLgpkOCkE",
+        "regex": re.compile(r'estatuto|lucro', re.IGNORECASE)
+    },
+    "TIRANDO_DE_CONTACTOS": {
+        "sticker_id": "CAACAgQAAx0CR9kKNwAC4LBiyxA5L3fbjJquQQzfx2VsHBp3OgAC5gwAAjpBGFIGwA5OqUbwNykE",
+        "regex": re.compile(r'contacto|confianza', re.IGNORECASE)
+    },
 }
 
 all_cards_regex_text = "|".join([cards_info[card]["regex"].pattern for card in cards_info])
