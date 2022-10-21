@@ -14,14 +14,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+from time import sleep
+
 from telegram.ext import CallbackContext
 from telegram import Update
 
-from time import sleep
-
 import yugiflybot.supportmethods as support
 
-from yugiflybot.regex import FLY_GROUPS_REGEX, cards_info, animations_info
+from yugiflybot.regex import FLY_GROUPS_REGEX, cards_info, animations_info, photos_info
 
 combo_ids = {
     "2-3": "CgACAgQAAx0CR9kKNwACqthgq3YLNSvV7OJUd8lr12juMfimaQACMwIAAr4GpFKVUzYwrKpIhh8E",
@@ -70,11 +70,11 @@ def check_cards_text(update: Update, context: CallbackContext):
     except:
         pass
 
-    check_animations_text(update, context)
+    check_animations_photos_text(update, context)
 #== Cards ==#
 
-#==== Animations ====#
-def check_animations_text(update: Update, context: CallbackContext):
+#==== Animations and photos ====#
+def check_animations_photos_text(update: Update, context: CallbackContext):
     chat_id, text, message = support.extract_update_info(update)
 
     try:
@@ -83,6 +83,10 @@ def check_animations_text(update: Update, context: CallbackContext):
                 support.send_animation_message(update, context, animations_info[animation]["animation_id"], None, None, replyToMessage=True)
                 sleep(1.25)
 
+        for photo in photos_info:
+            if bool(photos_info[photo]["regex"].search(text)):
+                support.send_photo_message(update, context, photos_info[photo]["photo_name"], photos_info[photo]["output_text"], None, deleteMessage=False, replyToMessage=False, delete_reply_after=None)
+                sleep(1.25)
     except:
         pass
-#== Animations ==#
+#== Animations and photos ==#

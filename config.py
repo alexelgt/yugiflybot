@@ -18,12 +18,13 @@ import os
 import configparser
 
 #=== Paths ===#
-bot_folder = os.path.dirname(__file__) + "/"
+BOT_FOLDER = os.path.dirname(__file__) + "/"
+PHOTO_PATH = BOT_FOLDER + "images/"
 
 #==== Config info ====#
 config_info = configparser.RawConfigParser()
-config_info.read(bot_folder + "config.ini")
+config_info.read(BOT_FOLDER + "config.ini")
 #== Config info ==#
 
 #=== Bot token ===#
-bot_token = config_info["bot"]["token"]
+BOT_TOKEN = config_info["bot"]["token"]

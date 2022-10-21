@@ -1,17 +1,17 @@
 # **Yu-Gi-Fly Bot**
 
 ![Python version](https://img.shields.io/badge/Python-v3.7-blue)
-![python-telegram-bot version](https://img.shields.io/badge/python\%20telegram\%20bot-v13.9-blue)
+![python-telegram-bot version](https://img.shields.io/badge/python%20telegram%20bot-v13.9-blue)
 
-*Note: this bot is intended to be used in groups which its main language is Spanish.*
+_Note: this bot is intended to be used in groups which its main language is Spanish._
 
 Yu-Gi-Fly Bot is an atrocity created as a joke. The bot sends stickers from [this pack](https://t.me/addstickers/istickerb751e86df2854b72b6109e9949fa2af9_by_istickeri19_bot) whenever it detects an excuse normally used by spoofers (Pokémon GO cheaters) to justify why they spoof.
 
 **The bot does NOT have any kind of configuration.**
 
-![example of the bot](images/Yu-Gi-Fly_Bot_example.jpeg)
+![example of the bot](images_readme/Yu-Gi-Fly_Bot_example.jpeg)
 
-*Example of the bot*
+_Example of the bot_
 
 ## **Content of config.ini**
 

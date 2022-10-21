@@ -16,6 +16,8 @@
 
 import telegram
 
+from yugiflybot.config import PHOTO_PATH
+
 def extract_update_info(update):
     try:
         message = update.message
@@ -83,7 +85,7 @@ def send_text_message(update, context, output_text, output_buttons, deleteMessag
     try:
         chat_id, text, message = extract_update_info(update)
 
-        if output_text != None:
+        if output_text is not None:
             if replyToMessage:
                 reply_to_message_id = message.message_id
             else:
@@ -107,6 +109,37 @@ def send_text_message(update, context, output_text, output_buttons, deleteMessag
         return None
     except:
         pass
+
+def send_photo_message(update, context, photo_name, output_text, output_buttons, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
+    try:
+        chat_id, text, message = extract_update_info(update)
+
+        if output_text is not None:
+            output_photo_path = PHOTO_PATH + photo_name
+
+            if replyToMessage:
+                reply_to_message_id = message.message_id
+            else:
+                reply_to_message_id = None
+
+            message_sent = context.bot.sendPhoto(
+                chat_id=chat_id,
+                photo=open(output_photo_path, "rb"),
+                caption=output_text,
+                reply_markup=output_buttons,
+                allow_sending_without_reply=True,
+                reply_to_message_id=reply_to_message_id,
+                parse_mode=telegram.ParseMode.HTML)
+
+            if deleteMessage:
+                delete_message(chat_id, message.message_id, context)
+
+            if delete_reply_after is not None:
+                delayed_delete_message(delete_reply_after, chat_id, message_sent.message_id, context)
+            return message_sent
+        return None
+    except:
+        return None
 
 def send_sticker_message(update, context, sticker_id, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
     try:

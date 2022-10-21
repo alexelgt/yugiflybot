@@ -22,16 +22,16 @@ from telegram.bot import Bot
 
 import yugiflybot.handleusermessage as handleusermessage
 
-from yugiflybot.regex import FLY_GROUPS_REGEX, CARDS_TEXT_REGEX, ANIMATION_TEXT_REGEX
+from yugiflybot.regex import FLY_GROUPS_REGEX, CARDS_TEXT_REGEX, ANIMATION_PHOTOS_TEXT_REGEX
 
-from yugiflybot.config import bot_token
+from yugiflybot.config import BOT_TOKEN
 
 #==== Bot initial set up ====#
 workers = 12
 con_pool_size = workers + 4
 
 request = Request(con_pool_size=con_pool_size)
-bot = Bot(bot_token, request=request)
+bot = Bot(BOT_TOKEN, request=request)
 updater = Updater(bot=bot, workers=workers)
 
 dispatcher = updater.dispatcher
@@ -40,7 +40,7 @@ dispatcher = updater.dispatcher
 #==== Message handlers ====#
 dispatcher.add_handler(MessageHandler(callback=handleusermessage.check_cards_text, filters=Filters.text & (Filters.regex(CARDS_TEXT_REGEX) | Filters.regex(FLY_GROUPS_REGEX)) & Filters.update.message & Filters.chat_type.groups, run_async=True))
 
-dispatcher.add_handler(MessageHandler(callback=handleusermessage.check_animations_text, filters=Filters.text & Filters.regex(ANIMATION_TEXT_REGEX) & Filters.update.message & Filters.chat_type.groups, run_async=True))
+dispatcher.add_handler(MessageHandler(callback=handleusermessage.check_animations_photos_text, filters=Filters.text & Filters.regex(ANIMATION_PHOTOS_TEXT_REGEX) & Filters.update.message & Filters.chat_type.groups, run_async=True))
 
 # dispatcher.add_handler(MessageHandler(callback=handleusermessage.update_info, filters=(Filters.sticker | Filters.animation), run_async=True))
 #== Message handlers ==#

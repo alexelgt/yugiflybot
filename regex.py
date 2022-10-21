@@ -332,7 +332,15 @@ animations_info = {
     },
 }
 
-all_animations_regex_text = "|".join([animations_info[animation]["regex"].pattern for animation in animations_info])
+photos_info = {
+    "IGREJA": {
+        "photo_name": "igreja.jpeg",
+        "output_text": "Igreja",
+        "regex": re.compile(r'\bpois+\b|\bigreja\b', re.IGNORECASE)
+    },
+}
 
-ANIMATION_TEXT_REGEX = re.compile(all_animations_regex_text, re.IGNORECASE)
+all_animations_photos_regex_text = "|".join([animations_info[animation]["regex"].pattern for animation in animations_info] + [photos_info[photo]["regex"].pattern for photo in photos_info])
+
+ANIMATION_PHOTOS_TEXT_REGEX = re.compile(all_animations_photos_regex_text, re.IGNORECASE)
 #== Animations ==#
