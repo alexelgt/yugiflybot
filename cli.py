@@ -16,9 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from telegram.ext import Updater, MessageHandler, Filters
-from telegram.utils.request import Request
-from telegram.bot import Bot
+from telegram.ext import Application, MessageHandler, filters
 
 import yugiflybot.handleusermessage as handleusermessage
 
@@ -26,25 +24,16 @@ from yugiflybot.regex import FLY_GROUPS_REGEX, CARDS_TEXT_REGEX, ANIMATION_PHOTO
 
 from yugiflybot.config import BOT_TOKEN
 
-#==== Bot initial set up ====#
-workers = 12
-con_pool_size = workers + 4
-
-request = Request(con_pool_size=con_pool_size)
-bot = Bot(BOT_TOKEN, request=request)
-updater = Updater(bot=bot, workers=workers)
-
-dispatcher = updater.dispatcher
-#== Bot initial set up ==#
+#=== Bot initial set up ===#
+application = Application.builder().token(BOT_TOKEN).build()
 
 #==== Message handlers ====#
-dispatcher.add_handler(MessageHandler(callback=handleusermessage.check_cards_text, filters=Filters.text & (Filters.regex(CARDS_TEXT_REGEX) | Filters.regex(FLY_GROUPS_REGEX)) & Filters.update.message & Filters.chat_type.groups, run_async=True))
+application.add_handler(MessageHandler(callback=handleusermessage.check_cards_text, filters=filters.TEXT & (filters.Regex(CARDS_TEXT_REGEX) | filters.Regex(FLY_GROUPS_REGEX)) & filters.UpdateType.MESSAGE & filters.ChatType.GROUPS, block=False))
 
-dispatcher.add_handler(MessageHandler(callback=handleusermessage.check_animations_photos_text, filters=Filters.text & Filters.regex(ANIMATION_PHOTOS_TEXT_REGEX) & Filters.update.message & Filters.chat_type.groups, run_async=True))
+application.add_handler(MessageHandler(callback=handleusermessage.check_animations_photos_text, filters=filters.TEXT & filters.Regex(ANIMATION_PHOTOS_TEXT_REGEX) & filters.UpdateType.MESSAGE & filters.ChatType.GROUPS, block=False))
 
-# dispatcher.add_handler(MessageHandler(callback=handleusermessage.update_info, filters=(Filters.sticker | Filters.animation), run_async=True))
+# application.add_handler(MessageHandler(callback=handleusermessage.update_info, filters=(filters.Sticker.ALL | filters.ANIMATION), block=False))
 #== Message handlers ==#
 
 print("Bot started")
-updater.start_polling()
-updater.idle()
+application.run_polling()

@@ -16,7 +16,6 @@
 
 from time import sleep
 
-from telegram.ext import CallbackContext
 from telegram import Update
 
 import yugiflybot.supportmethods as support
@@ -29,11 +28,11 @@ combo_ids = {
     "5-": "CgACAgQAAx0CR9kKNwACqypgq5ARtetfmZaE420gVc1G-agpEQACxQoAAnd-YFHaxO04cWwkrB8E"
 }
 
-def update_info(update: Update, context: CallbackContext):
+async def update_info(update: Update, context):
     print(update)
 
 #==== Cards ====#
-def check_cards_text(update: Update, context: CallbackContext):
+async def check_cards_text(update: Update, context):
     chat_id, text, message = support.extract_update_info(update)
 
     combo_points = 0
@@ -47,45 +46,45 @@ def check_cards_text(update: Update, context: CallbackContext):
 
             if bool(cards_info[card]["regex"].search(text)):
                 if combo_points < 10:
-                    support.send_sticker_message(update, context, cards_info[card]["sticker_id"], replyToMessage=True)
+                    await support.send_sticker_message(update, context, cards_info[card]["sticker_id"], replyToMessage=True)
                     sleep(1.25)
 
                 combo_points += 1
 
         if fly_groups_points > 0:
             output_text = "Detectados {} grupos fly".format(fly_groups_points)
-            support.send_text_message(update, context, output_text, None, replyToMessage=True)
+            await support.send_text_message(update, context, output_text, None, replyToMessage=True)
             sleep(1.25)
 
         if combo_points in range(2,4):
             output_text = "💥 <b>¡Combo x{}!</b>\n\nNo está mal, fly, pero puedes hacerlo mejor.".format(combo_points)
-            support.send_animation_message(update, context, combo_ids["2-3"], output_text, None, replyToMessage=True)
+            await support.send_animation_message(update, context, combo_ids["2-3"], output_text, None, replyToMessage=True)
         elif combo_points == 4:
             output_text = "💥 <b>¡Combo x{}!</b>\n\nTu nivel de fly es increíble.".format(combo_points)
-            support.send_animation_message(update, context, combo_ids["4"], output_text, None, replyToMessage=True)
+            await support.send_animation_message(update, context, combo_ids["4"], output_text, None, replyToMessage=True)
         elif combo_points >= 5:
             output_text = "💥 <b>¡Combo x{}!</b>\n\n¡No puede ser! Has encontrado la última carta y liberado a Flyxodia.".format(combo_points)
-            support.send_animation_message(update, context, combo_ids["5-"], output_text, None, replyToMessage=True)
+            await support.send_animation_message(update, context, combo_ids["5-"], output_text, None, replyToMessage=True)
 
     except:
         pass
 
-    check_animations_photos_text(update, context)
+    await check_animations_photos_text(update, context)
 #== Cards ==#
 
 #==== Animations and photos ====#
-def check_animations_photos_text(update: Update, context: CallbackContext):
+async def check_animations_photos_text(update: Update, context):
     chat_id, text, message = support.extract_update_info(update)
 
     try:
         for animation in animations_info:
             if bool(animations_info[animation]["regex"].search(text)):
-                support.send_animation_message(update, context, animations_info[animation]["animation_id"], None, None, replyToMessage=True)
+                await support.send_animation_message(update, context, animations_info[animation]["animation_id"], None, None, replyToMessage=True)
                 sleep(1.25)
 
         for photo in photos_info:
             if bool(photos_info[photo]["regex"].search(text)):
-                support.send_photo_message(update, context, photos_info[photo]["photo_name"], photos_info[photo]["output_text"], None, deleteMessage=False, replyToMessage=False, delete_reply_after=None)
+                await support.send_photo_message(update, context, photos_info[photo]["photo_name"], photos_info[photo]["output_text"], None, deleteMessage=False, replyToMessage=False, delete_reply_after=None)
                 sleep(1.25)
     except:
         pass
