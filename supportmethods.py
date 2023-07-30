@@ -18,6 +18,7 @@ import telegram
 
 from yugiflybot.config import PHOTO_PATH
 
+
 def extract_update_info(update):
     try:
         message = update.message
@@ -61,6 +62,7 @@ def extract_update_info(update):
 
     return chat_id, text, message
 
+
 async def delete_message(chat_id, message_id, context):
     try:
         await context.bot.deleteMessage(chat_id=chat_id, message_id=message_id)
@@ -69,17 +71,21 @@ async def delete_message(chat_id, message_id, context):
     except:
         return False
 
+
 async def delayed_delete_message_callback(context):
     chat_id, message_id = context.job.data
 
     delete_message(chat_id, message_id, context)
 
+
 def delayed_delete_message(time: int, chat_id: int, message_id: int, context):
     try:
         if time is not None:
-            context.job_queue.run_once(callback=delayed_delete_message_callback, when=time, context=[chat_id, message_id])
+            context.job_queue.run_once(
+                callback=delayed_delete_message_callback, when=time, context=[chat_id, message_id])
     except:
         pass
+
 
 async def send_text_message(update, context, output_text, output_buttons, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
     try:
@@ -104,11 +110,13 @@ async def send_text_message(update, context, output_text, output_buttons, delete
                 delete_message(chat_id, message.message_id, context)
 
             if delete_reply_after is not None:
-                delayed_delete_message(delete_reply_after, chat_id, message_sent.message_id, context)
+                delayed_delete_message(
+                    delete_reply_after, chat_id, message_sent.message_id, context)
             return message_sent
         return None
     except:
         pass
+
 
 async def send_photo_message(update, context, photo_name, output_text, output_buttons, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
     try:
@@ -135,17 +143,19 @@ async def send_photo_message(update, context, photo_name, output_text, output_bu
                 delete_message(chat_id, message.message_id, context)
 
             if delete_reply_after is not None:
-                delayed_delete_message(delete_reply_after, chat_id, message_sent.message_id, context)
+                delayed_delete_message(
+                    delete_reply_after, chat_id, message_sent.message_id, context)
             return message_sent
         return None
     except:
         return None
 
+
 async def send_sticker_message(update, context, sticker_id, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
     try:
         chat_id, text, message = extract_update_info(update)
 
-        if sticker_id != None:
+        if sticker_id is not None:
             if replyToMessage:
                 reply_to_message_id = message.message_id
             else:
@@ -161,17 +171,19 @@ async def send_sticker_message(update, context, sticker_id, deleteMessage=False,
                 delete_message(chat_id, message.message_id, context)
 
             if delete_reply_after is not None:
-                delayed_delete_message(delete_reply_after, chat_id, message_sent.message_id, context)
+                delayed_delete_message(
+                    delete_reply_after, chat_id, message_sent.message_id, context)
             return message_sent
         return None
     except:
         return None
 
+
 async def send_animation_message(update, context, animation_id, output_text, output_buttons, deleteMessage=False, replyToMessage=False, delete_reply_after=None):
     try:
         chat_id, text, message = extract_update_info(update)
 
-        if animation_id != None:
+        if animation_id is not None:
             if replyToMessage:
                 reply_to_message_id = message.message_id
             else:
@@ -190,7 +202,8 @@ async def send_animation_message(update, context, animation_id, output_text, out
                 delete_message(chat_id, message.message_id, context)
 
             if delete_reply_after is not None:
-                delayed_delete_message(delete_reply_after, chat_id, message_sent.message_id, context)
+                delayed_delete_message(
+                    delete_reply_after, chat_id, message_sent.message_id, context)
             return message_sent
         return None
     except:

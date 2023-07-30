@@ -16,24 +16,27 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from telegram.ext import Application, MessageHandler, filters
+from telegram.ext import Application, AIORateLimiter, MessageHandler, filters
 
-import yugiflybot.handleusermessage as handleusermessage
+from yugiflybot import handleusermessage
 
 from yugiflybot.regex import FLY_GROUPS_REGEX, CARDS_TEXT_REGEX, ANIMATION_PHOTOS_TEXT_REGEX
 
 from yugiflybot.config import BOT_TOKEN
 
-#=== Bot initial set up ===#
-application = Application.builder().token(BOT_TOKEN).build()
+# === Bot initial set up === #
+application = Application.builder().token(BOT_TOKEN).rate_limiter(
+    AIORateLimiter(overall_max_rate=0, max_retries=1)).build()
 
-#==== Message handlers ====#
-application.add_handler(MessageHandler(callback=handleusermessage.check_cards_text, filters=filters.TEXT & (filters.Regex(CARDS_TEXT_REGEX) | filters.Regex(FLY_GROUPS_REGEX)) & filters.UpdateType.MESSAGE & filters.ChatType.GROUPS, block=False))
+# ==== Message handlers ==== #
+application.add_handler(MessageHandler(callback=handleusermessage.check_cards_text, filters=filters.TEXT & (filters.Regex(
+    CARDS_TEXT_REGEX) | filters.Regex(FLY_GROUPS_REGEX)) & filters.UpdateType.MESSAGE & filters.ChatType.GROUPS, block=False))
 
-application.add_handler(MessageHandler(callback=handleusermessage.check_animations_photos_text, filters=filters.TEXT & filters.Regex(ANIMATION_PHOTOS_TEXT_REGEX) & filters.UpdateType.MESSAGE & filters.ChatType.GROUPS, block=False))
+application.add_handler(MessageHandler(callback=handleusermessage.check_animations_photos_text, filters=filters.TEXT & filters.Regex(
+    ANIMATION_PHOTOS_TEXT_REGEX) & filters.UpdateType.MESSAGE & filters.ChatType.GROUPS, block=False))
 
 # application.add_handler(MessageHandler(callback=handleusermessage.update_info, filters=(filters.Sticker.ALL | filters.ANIMATION), block=False))
-#== Message handlers ==#
+# == Message handlers == #
 
 print("Bot started")
 application.run_polling()

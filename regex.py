@@ -16,10 +16,10 @@
 
 import re
 
-#=== Fly groups ===#
+# === Fly groups === #
 FLY_GROUPS_REGEX = re.compile(r'pokemongoflymundial100ivs|intercambiospokemongoflymundial|pokemongoflymundial|ayudaflypokemongo|coordenadasunown|laketriopogo|offtopicflymundial|pvpflymundial|codigosamistadflymundial|pokemongofly100|pokemongoflychat|pokemongoflycoords|pokemongoflyraids|pgsharpop|pgsharpk|pgsharpapp|pgsharpofficials|pogoflyitaly2_0|pokemongohackspain|flygpspokemongo|unlimited100pokemon|pogopvpcoordinates|catch100|aerialsurveymisiones|aerialsurveypgo|pokemodespressoapk|top_pvpcoords|nexushub00|toppokego100iv|teamgorocketcoords', re.IGNORECASE)
 
-#==== Cards ====#
+# ==== Cards ==== #
 cards_info = {
     "NEGACION_PERPETUA": {
         "sticker_id": "CAACAgQAAx0CR9kKNwACqrlgq3DaAgbAMdlx-jBjFfBYuvJpWgACjwkAAoIUOFHGDP1O2sYXTR8E",
@@ -311,12 +311,13 @@ cards_info = {
     },
 }
 
-all_cards_regex_text = "|".join([cards_info[card]["regex"].pattern for card in cards_info])
+all_cards_regex_text = "|".join(
+    [card_value["regex"].pattern for card_value in cards_info.values()])
 
 CARDS_TEXT_REGEX = re.compile(all_cards_regex_text, re.IGNORECASE)
-#== Cards ==#
+# == Cards == #
 
-#==== Animations ====#
+# ==== Animations ==== #
 animations_info = {
     "NAZI_WALKER": {
         "animation_id": "CgACAgQAAx0CR9kKNwACypxhdbvZGu9VoMqm5UPXdn8o5GqyXAACSgEAArnhmVOk22WpWiz84yEE",
@@ -340,7 +341,9 @@ photos_info = {
     },
 }
 
-all_animations_photos_regex_text = "|".join([animations_info[animation]["regex"].pattern for animation in animations_info] + [photos_info[photo]["regex"].pattern for photo in photos_info])
+all_animations_photos_regex_text = "|".join([animation_value["regex"].pattern for animation_value in animations_info.values()] + [
+                                            photo_value["regex"].pattern for photo_value in photos_info.values()])
 
-ANIMATION_PHOTOS_TEXT_REGEX = re.compile(all_animations_photos_regex_text, re.IGNORECASE)
-#== Animations ==#
+ANIMATION_PHOTOS_TEXT_REGEX = re.compile(
+    all_animations_photos_regex_text, re.IGNORECASE)
+# == Animations == #
