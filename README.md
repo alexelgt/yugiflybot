@@ -1,7 +1,7 @@
 # **Yu-Gi-Fly Bot**
 
-![Python version](https://img.shields.io/badge/Python-v3.7-blue)
-![python-telegram-bot version](https://img.shields.io/badge/python%20telegram%20bot-v13.9-blue)
+![Python version](https://img.shields.io/badge/Python-v3.11-blue)
+![python-telegram-bot version](https://img.shields.io/badge/python_telegram_bot-v21.10-blue)
 
 _Note: this bot is intended to be used in groups which its main language is Spanish._
 
