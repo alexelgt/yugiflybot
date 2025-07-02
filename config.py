@@ -28,3 +28,5 @@ config_info.read(BOT_FOLDER + "config.ini")
 
 # === Bot token === #
 BOT_TOKEN = config_info["bot"]["token"]
+
+MAX_NUMBER_STICKERS_TO_SEND = 5

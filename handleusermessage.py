@@ -18,9 +18,11 @@ from time import sleep
 
 from telegram import Update
 
-from yugiflybot import supportmethods as support
+from yugiflybot.support import extract, msg
 
 from yugiflybot.regex import FLY_GROUPS_REGEX, cards_info, animations_info, photos_info
+
+from yugiflybot import config
 
 combo_ids = {
     "2-3": "CgACAgQAAx0CR9kKNwACqthgq3YLNSvV7OJUd8lr12juMfimaQACMwIAAr4GpFKVUzYwrKpIhh8E",
@@ -35,7 +37,7 @@ async def update_info(update: Update, context):
 
 # ==== Cards ==== #
 async def check_cards_text(update: Update, context):
-    _, text, _ = support.extract_update_info(update)
+    _, text, _ = extract.extract_update_info(update)
 
     combo_points = 0
 
@@ -46,26 +48,26 @@ async def check_cards_text(update: Update, context):
 
         for card_value in cards_info.values():
             if bool(card_value["regex"].search(text)):
-                if combo_points < 10:
-                    await support.send_sticker_message(update, context, card_value["sticker_id"], replyToMessage=True)
+                if combo_points < config.MAX_NUMBER_STICKERS_TO_SEND:
+                    await msg.send_sticker_message(update, context, card_value["sticker_id"], replyToMessage=True)
                     sleep(1.25)
 
                 combo_points += 1
 
         if fly_groups_points > 0:
             output_text = f"Detectados {fly_groups_points} grupos fly"
-            await support.send_text_message(update, context, output_text, None, replyToMessage=True)
+            await msg.send_text_message(update, context, output_text, None, replyToMessage=True)
             sleep(1.25)
 
         if combo_points in range(2, 4):
             output_text = f"💥 <b>¡Combo x{combo_points}!</b>\n\nNo está mal, fly, pero puedes hacerlo mejor."
-            await support.send_animation_message(update, context, combo_ids["2-3"], output_text, None, replyToMessage=True)
+            await msg.send_animation_message(update, context, combo_ids["2-3"], output_text, None, replyToMessage=True)
         elif combo_points == 4:
             output_text = f"💥 <b>¡Combo x{combo_points}!</b>\n\nTu nivel de fly es increíble."
-            await support.send_animation_message(update, context, combo_ids["4"], output_text, None, replyToMessage=True)
+            await msg.send_animation_message(update, context, combo_ids["4"], output_text, None, replyToMessage=True)
         elif combo_points >= 5:
             output_text = f"💥 <b>¡Combo x{combo_points}!</b>\n\n¡No puede ser! Has encontrado la última carta y liberado a Flyxodia."
-            await support.send_animation_message(update, context, combo_ids["5-"], output_text, None, replyToMessage=True)
+            await msg.send_animation_message(update, context, combo_ids["5-"], output_text, None, replyToMessage=True)
 
     except:
         pass
@@ -76,17 +78,17 @@ async def check_cards_text(update: Update, context):
 
 # ==== Animations and photos ==== #
 async def check_animations_photos_text(update: Update, context):
-    _, text, _ = support.extract_update_info(update)
+    _, text, _ = extract.extract_update_info(update)
 
     try:
         for animation_value in animations_info.values():
             if bool(animation_value["regex"].search(text)):
-                await support.send_animation_message(update, context, animation_value["animation_id"], None, None, replyToMessage=True)
+                await msg.send_animation_message(update, context, animation_value["animation_id"], None, None, replyToMessage=True)
                 sleep(1.25)
 
         for photo_value in photos_info.values():
             if bool(photo_value["regex"].search(text)):
-                await support.send_photo_message(update, context, photo_value["photo_name"], photo_value["output_text"], None, deleteMessage=False, replyToMessage=False, delete_reply_after=None)
+                await msg.send_photo_message(update, context, photo_value["photo_name"], photo_value["output_text"], None, deleteMessage=False, replyToMessage=False, delete_reply_after=None)
                 sleep(1.25)
     except:
         pass
