@@ -313,6 +313,10 @@ cards_info = {
         "sticker_id": "CAACAgQAAx0CTPXk_gABBUrIaIkF9HTY5ZFpQsGSKpX98VPKfgoAAtgZAAJuf0hQaWaRgtDsESQ2BA",
         "regex": re.compile(r'\bex\b', re.IGNORECASE)
     },
+    "FLY_EXPANSION": {
+        "sticker_id": "CAACAgQAAxkBAANmaIkRFbO4HnG9LQcPohfg3mTMFkYAAkgZAAJLDElQ59xlXPdEIHc2BA",
+        "regex": re.compile(r'fly expansion|big bang|siempre ha habido fly', re.IGNORECASE)
+    },
 }
 
 all_cards_regex_text = "|".join(
