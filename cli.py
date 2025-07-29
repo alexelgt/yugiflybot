@@ -35,8 +35,11 @@ application.add_handler(MessageHandler(callback=handleusermessage.check_cards_te
 application.add_handler(MessageHandler(callback=handleusermessage.check_animations_photos_text, filters=filters.TEXT & filters.Regex(
     ANIMATION_PHOTOS_TEXT_REGEX) & filters.UpdateType.MESSAGE & filters.ChatType.GROUPS, block=False))
 
-application.add_handler(MessageHandler(callback=handleusermessage.sticker_info, filters=(filters.Sticker.ALL | filters.ANIMATION)
-                        & filters.ChatType.PRIVATE & filters.User(user_id=config.CREATOR_ID), block=False))
+application.add_handler(
+    MessageHandler(callback=handleusermessage.sticker_info, filters=filters.Sticker.ALL & filters.ChatType.PRIVATE & filters.User(user_id=config.CREATOR_ID), block=False))
+
+application.add_handler(
+    MessageHandler(callback=handleusermessage.animation_info, filters=filters.ANIMATION & filters.ChatType.PRIVATE & filters.User(user_id=config.CREATOR_ID), block=False))
 # == Message handlers == #
 
 print("Bot started")

@@ -309,6 +309,10 @@ cards_info = {
         "sticker_id": "CAACAgQAAx0CR9kKNwAC4LBiyxA5L3fbjJquQQzfx2VsHBp3OgAC5gwAAjpBGFIGwA5OqUbwNykE",
         "regex": re.compile(r'contacto|confianza', re.IGNORECASE)
     },
+    "LA_EX": {
+        "sticker_id": "CAACAgQAAx0CTPXk_gABBUrIaIkF9HTY5ZFpQsGSKpX98VPKfgoAAtgZAAJuf0hQaWaRgtDsESQ2BA",
+        "regex": re.compile(r'\bex\b', re.IGNORECASE)
+    },
 }
 
 all_cards_regex_text = "|".join(
