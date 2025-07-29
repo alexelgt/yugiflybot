@@ -16,6 +16,8 @@
 
 from time import sleep
 
+from html import escape
+
 from telegram.ext import ContextTypes
 from telegram import Update
 
@@ -36,7 +38,7 @@ async def sticker_info(
     update: Update,
     context: ContextTypes.DEFAULT_TYPE
 ):
-    output_text = str(update)
+    output_text = escape(str(update))
 
     await msg.send_text_message(update, context, output_text, None, replyToMessage=True)
 
