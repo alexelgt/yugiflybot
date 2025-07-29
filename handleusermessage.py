@@ -16,6 +16,7 @@
 
 from time import sleep
 
+from telegram.ext import ContextTypes
 from telegram import Update
 
 from yugiflybot.support import extract, msg
@@ -31,12 +32,20 @@ combo_ids = {
 }
 
 
-async def update_info(update: Update, context):
-    print(update)
+async def sticker_info(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE
+):
+    output_text = str(update)
+
+    await msg.send_text_message(update, context, output_text, None, replyToMessage=True)
 
 
 # ==== Cards ==== #
-async def check_cards_text(update: Update, context):
+async def check_cards_text(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE
+):
     _, text, _ = extract.extract_update_info(update)
 
     combo_points = 0
@@ -77,7 +86,10 @@ async def check_cards_text(update: Update, context):
 
 
 # ==== Animations and photos ==== #
-async def check_animations_photos_text(update: Update, context):
+async def check_animations_photos_text(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE
+):
     _, text, _ = extract.extract_update_info(update)
 
     try:

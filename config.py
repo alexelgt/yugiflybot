@@ -30,3 +30,5 @@ config_info.read(BOT_FOLDER + "config.ini")
 BOT_TOKEN = config_info["bot"]["token"]
 
 MAX_NUMBER_STICKERS_TO_SEND = 5
+
+CREATOR_ID = 48973
