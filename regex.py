@@ -314,7 +314,7 @@ cards_info = {
         "regex": re.compile(r'\bex\b', re.IGNORECASE)
     },
     "FLY_EXPANSION": {
-        "sticker_id": "CAACAgQAAxkBAANuaInDp7qoh0AxdouM2RhjN2HN0q0AAkYZAAKFUVBQVNYSpT6ft6I2BA",
+        "sticker_id": "CAACAgQAAxkBAANwaInEud2R5rU0AurYNXZwjF7dnVoAAjQaAAK1JElQInPgKixemBc2BA",
         "regex": re.compile(r'fly expansion|big bang|siempre ha habido fly', re.IGNORECASE)
     },
 }
