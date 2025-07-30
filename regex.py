@@ -310,11 +310,11 @@ cards_info = {
         "regex": re.compile(r'contacto|confianza', re.IGNORECASE)
     },
     "LA_EX": {
-        "sticker_id": "CAACAgQAAx0CTPXk_gABBUrIaIkF9HTY5ZFpQsGSKpX98VPKfgoAAtgZAAJuf0hQaWaRgtDsESQ2BA",
+        "sticker_id": "CAACAgQAAxkBAANsaInDoTQMVGgFNR-hdfLMnGOG-JQAAucaAALWu1BQorM83Yqpb5M2BA",
         "regex": re.compile(r'\bex\b', re.IGNORECASE)
     },
     "FLY_EXPANSION": {
-        "sticker_id": "CAACAgQAAxkBAANmaIkRFbO4HnG9LQcPohfg3mTMFkYAAkgZAAJLDElQ59xlXPdEIHc2BA",
+        "sticker_id": "CAACAgQAAxkBAANuaInDp7qoh0AxdouM2RhjN2HN0q0AAkYZAAKFUVBQVNYSpT6ft6I2BA",
         "regex": re.compile(r'fly expansion|big bang|siempre ha habido fly', re.IGNORECASE)
     },
 }
